@@ -59,7 +59,7 @@ public class stepDefination {
 	public void Verify_search_result() {
 		welcomePage = new WelcomePage(driver);
 		String result = welcomePage.getSearchResult();
-		Utilits.takeScreenShot(driver, "D:\\sachin\\JavaLearning2\\KnowIT\\resources\\screenshot\\TC1_01.jpeg");
+		Utilits.takeScreenShot(driver, System.getProperty("user.dir")+"\\resources\\TC1_01.jpeg");
 		org.testng.Assert.assertTrue(result.contains("Alla"), "Failed to load results");
 	}
 	
@@ -86,7 +86,7 @@ public class stepDefination {
 		
 		WebDriverWait waitElement  = new WebDriverWait(driver, 30);
 		waitElement.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[text()='Knowit']")));
-		Utilits.takeScreenShot(driver, "D:\\sachin\\JavaLearning2\\KnowIT\\resources\\screenshot\\TC2_01.jpeg");
+		Utilits.takeScreenShot(driver, System.getProperty("user.dir")+"\\resources\\TC2_01.jpeg");
 		driver.close();
 		driver.switchTo().window(parentdWindow);
 	}
@@ -95,7 +95,7 @@ public class stepDefination {
 	public void Scroll_to_top_into_parent_window() {
 		welcomePage = new WelcomePage(driver);
 		welcomePage.scrollIntoTop();
-		Utilits.takeScreenShot(driver, "D:\\sachin\\JavaLearning2\\KnowIT\\resources\\screenshot\\TC2_02.jpeg");
+		Utilits.takeScreenShot(driver, System.getProperty("user.dir")+"\\resources\\TC2_02.jpeg");
 	}
 	
 	@After
